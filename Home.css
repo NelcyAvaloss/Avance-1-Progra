@@ -29,6 +29,7 @@ body {
     background-size: cover;        /* para que cubra toda la pantalla */
     background-position: center;   /* centrado */
     background-repeat: no-repeat;  /* evita que se repita */
+        background: linear-gradient(90deg, #e2e2e2, #abb9ec);
 
 }
 
