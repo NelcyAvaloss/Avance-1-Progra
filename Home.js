@@ -29,3 +29,18 @@ modal.addEventListener("click", (e) => {
     }
 });
 
+function toggleSidebar() {
+  document.getElementById("sidebar").classList.toggle("open");
+}
+
+function toggleSidebar() {
+  document.getElementById("sidebar").classList.toggle("open");
+}
+
+
+
+// ********************************* CONEXION A LA VENTANA DE MIS LIBROS *****************//
+
+ 
+
+
