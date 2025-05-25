@@ -170,6 +170,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// ************ CONEXION A LA PAGINA PRINCIPAL HOME ***************** //
-
 

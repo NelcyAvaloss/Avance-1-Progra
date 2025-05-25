@@ -1,0 +1,156 @@
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f6fa;
+      margin: 0;
+      padding: 0;
+    }
+
+header {
+  background-color: #1e2a38; /* Azul oscuro profundo */
+  color: #f1f6fb; /* Azul muy claro para contraste */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/2206/2206368.png'); /* Ícono de gatito azul oscuro */
+  background-repeat: no-repeat;
+  background-position: left 1.5rem center;
+  background-size: 40px;
+  padding-left: 4rem; /* deja espacio al ícono */
+  border-bottom: 3px solid #395c82; /* azul intermedio */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+    nav {
+      background-color: #dff9fb;
+      padding: 1rem 2rem;
+      margin-bottom: 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 2rem;
+      
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #19400f;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 1rem 2rem;
+    }
+
+    section {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .nombre-usuario {
+    font-weight: bold;
+    color: #2d3436;
+    }
+
+
+    
+    input[type="text"] {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.6rem 0.9rem;
+      border-radius: 10px;
+      border: 1px solid #ced6e0;
+      background-color: #ffffff;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      outline: none;
+      margin-bottom: 1.5rem;
+    }
+
+    input[type="text"]::placeholder {
+      color: #a4b0be;
+      font-style: italic;
+    }
+
+    input[type="text"]:focus {
+      border: 1px solid #4a69bd;
+      box-shadow: 0 0 0 3px rgba(74, 105, 189, 0.2);
+    }
+
+    #lista-usuarios div,
+    .libro-card {
+      background-color: #f8f9fa;
+      padding: 0.7rem 1rem;
+      margin-bottom: 0.5rem;
+      border-left: 5px solid #0984e3;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .libro-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .titulo-libro {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #2d3436;
+    }
+
+    .subido-por {
+      color: #636e72;
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    .libro-acciones {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    button {
+      border: none;
+      padding: 0.4rem 0.7rem;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-left: 0.5rem;
+    }
+
+    button.eliminar {
+      background-color: #ff7675;
+      color: white;
+    }
+
+    button.restringir {
+      background-color: #fdcb6e;
+      color: black;
+    }
+
+    button.ver {
+      background-color: #74b9ff;
+      color: white;
+    }

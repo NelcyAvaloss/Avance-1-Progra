@@ -131,6 +131,22 @@ body {
     transform: translate(-50%, -5%);
 }
 
+/* Boton de ver libr */
+.ver-btn {
+    margin-top: 8px;
+    padding: 6px 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.ver-btn:hover {
+    background-color: #0056b3;
+}
+
+
 .footer {
     background-color: #1e272e;
     color: #f6f1f8;
@@ -143,7 +159,7 @@ body {
 }
 
 
-
+/* ******************************************************************************* */
 /* Botón para abrir el menú */
 .open-btn {
   position: fixed;
@@ -252,6 +268,9 @@ body {
 }
 .sidebar li:nth-child(5) a::before {
   background-color: #dcedc8; /* Contacto */
+}
+.sidebar li:nth-child(6) a::before {
+  background-color: #f0e7b7; /* Contacto */
 }
 
 /* Efecto al pasar el mouse */
