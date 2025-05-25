@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Panel de Administrador</title>
-  <link rel="stylesheet" href="Admin.css">
+<link rel="stylesheet" href="{{ asset('css/Admin.css') }}">
+
+
 </head>
 <body>
   <header>
@@ -95,6 +97,6 @@
     </section>
   </main>
 
-  <script src="Admin.js"></script>
+  {{ asset('js/Admin.js') }}
 </body>
 </html>

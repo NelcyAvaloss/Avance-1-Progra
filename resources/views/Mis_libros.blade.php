@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Libros</title>
+        <link rel="stylesheet" href="{{ asset('css/Mis_libros.css') }}">
+</head>
+<body>
+
+
+<a href="{{ route('home') }}" class="open-btn">Volver a Inicio</a>
+
+
+
+    <!-- Sección de subida de libros -->
+<!-- Sección de subida de libros -->
+<section id="mis-libros" class="mis-libros">
+  <h2>Subir Mis Libros</h2>
+
+  <form id="form-libro">
+    <label for="titulo">Título del libro</label><br>
+    <input type="text" id="titulo" placeholder="Título del libro" required><br><br>
+
+    <label for="descripcion">Descripción del libro</label><br>
+    <textarea id="descripcion" placeholder="Descripción del libro" required></textarea><br><br>
+
+    <label for="categoria">Categoría</label><br>
+    <select id="categoria" required>
+      <option value="" disabled selected>Selecciona una categoría</option>
+      <option value="terror">Terror</option>
+      <option value="fantasia">Fantasía</option>
+      <option value="romance">Romance</option>
+      <option value="ciencia-ficcion">Ciencia ficción</option>
+      <option value="aventura">Aventura</option>
+      <option value="aventura">Misterio</option>
+      <option value="aventura">Historia</option>
+      <option value="aventura">Suspenso</option>
+      <option value="otros">Otros</option>
+    </select><br><br>
+
+    <label for="portada">Sube imagen de portada</label><br>
+    <input type="file" id="portada" accept="image/*" required><br><br>
+
+    <label for="archivo">Sube el libro (PDF, JPG, PNG)</label><br>
+    <input type="file" id="archivo" accept=".pdf,.jpg,.png" required><br><br>
+
+    <button type="submit">Subir libro</button>
+  </form>
+
+  <div id="lista-libros"></div>
+</section>
+
+
+
+
+    <h1>Mis Libros</h1>
+
+    <div class="gallery" id="libros-subidos">
+        <div class="container">
+            <img src="https://www.unebook.es/blog/wp-content/uploads/2020/05/Las_cronicas_de_Narnia-684x1024.jpg" alt="Las Cronicas De Narnia">
+            <div class="actions">
+                <button class="edit-btn">✏️ Editar</button>
+                <button class="delete-btn">🗑️ Eliminar</button>
+            </div>
+        </div>
+        <div class="container">
+            <img src="https://www.unebook.es/blog/wp-content/uploads/2020/05/Las_cronicas_de_Narnia-684x1024.jpg" alt="Las Cronicas De Narnia">
+            <div class="actions">
+                <button class="edit-btn">✏️ Editar</button>
+                <button class="delete-btn">🗑️ Eliminar</button>
+            </div>
+        </div>
+        <div class="container">
+            <img src="https://www.unebook.es/blog/wp-content/uploads/2020/05/Las_cronicas_de_Narnia-684x1024.jpg" alt="Las Cronicas De Narnia">
+            <div class="actions">
+                <button class="edit-btn">✏️ Editar</button>
+                <button class="delete-btn">🗑️ Eliminar</button>
+            </div>
+        </div>
+        <div class="container">
+            <img src="https://www.unebook.es/blog/wp-content/uploads/2020/05/Las_cronicas_de_Narnia-684x1024.jpg" alt="Las Cronicas De Narnia">
+            <div class="actions">
+                <button class="edit-btn">✏️ Editar</button>
+                <button class="delete-btn">🗑️ Eliminar</button>
+            </div>
+        </div>
+        <div class="container">
+            <img src="https://www.unebook.es/blog/wp-content/uploads/2020/05/Las_cronicas_de_Narnia-684x1024.jpg" alt="Las Cronicas De Narnia">
+            <div class="actions">
+                <button class="edit-btn">✏️ Editar</button>
+                <button class="delete-btn">🗑️ Eliminar</button>
+            </div>
+        </div>
+        
+    </div>
+
+<script src="{{ asset('js/Mis_libros.js') }}"></script>
+</body>
+
+<footer class="footer">
+    <p>© 2025 Sociedad Literaria del Minino. Todos los derechos reservados.</p>
+    <p>Hecho con 🐾 y libros.</p>
+</footer>
+</html>

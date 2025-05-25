@@ -1,0 +1,178 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f7f9fc;
+  color: #333;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.mis-libros {
+  max-width: 600px;
+  background: white;
+  padding: 20px 30px;
+  margin: 0 auto 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+form label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: inline-block;
+  color: #444;
+}
+
+form input[type="text"],
+form textarea,
+form select,
+form input[type="file"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1.8px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form textarea:focus,
+form select:focus {
+  border-color: #0077ff;
+  outline: none;
+}
+
+form button {
+  background-color: #0077ff;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+form button:hover {
+  background-color: #005fcc;
+}
+
+/* Galería */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  max-width: 960px;
+  margin: 0 auto 50px auto;
+}
+
+.container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 180px;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.container img {
+  width: 100%;
+  border-radius: 10px;
+  height: 260px;
+  object-fit: cover;
+}
+
+.container .info {
+  font-size: 0.9rem;
+  color: #555;
+  min-height: 68px;
+  overflow: hidden;
+}
+
+.container .info strong {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 700;
+  color: #222;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  gap: 5px;
+}
+
+.actions button {
+  flex: 1;
+  background: #0077ff;
+  border: none;
+  color: white;
+  padding: 8px 0;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.actions button.delete-btn {
+  background: #e04e4e;
+}
+
+.actions button:hover {
+  filter: brightness(0.9);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 10px;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* Boton que devuelve al inicio HOME */ 
+
+.open-btn {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none; /* Para que los <a> no tengan subrayado */
+}
+
+.open-btn:hover {
+  background-color: #4338ca;
+  transform: translateY(-2px);
+}
+
+.open-btn:active {
+  transform: scale(0.98);
+}
+

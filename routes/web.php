@@ -26,3 +26,13 @@ Route::post('/register', [AuthController::class, 'register'])
 // Procesa el formulario de login
 Route::post('/login', [AuthController::class, 'login'])
     ->name('login.attempt'); // Ruta que usa el método login() en AuthController
+
+   // Ruta simple sin controlador
+Route::get('/admin', function () {
+    return view('Admin'); // carga la vista
+})->middleware('auth')->name('admin');
+
+Route::get('/libros', function () {
+    return view('Mis_libros'); // carga la vista
+})->middleware('auth')->name('libros');
+
