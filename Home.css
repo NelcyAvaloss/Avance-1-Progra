@@ -6,12 +6,20 @@
     padding: 0;
 }
 
+body {
+    font-family: "roboto", cursive;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background: linear-gradient(90deg, #e2e2e2, #abb9ec);
+}
+
 .Encabezado {
     display: flex;
-    justify-content: center;  /* Centra horizontalmente */
-    align-items: center;      /* Centra verticalmente */
-    background-color: #010924; /* Opcional: fondo */
-
+    justify-content: center;
+    align-items: center;
+    background-color: #010924;
 }
 
 #Sociedad_literaria {
@@ -43,52 +51,170 @@
 }
 
 #buscador:focus {
-  border-color: #8b5cf6; /* lavanda/morado claro */
+  border-color: #8b5cf6;
   box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
 }
 
+/* Galería agrupada por categoría */
+.galeria-categorias {
+  padding-bottom: 40px;
+}
 
+.categoria-seccion {
+  margin-bottom: 60px;
+}
 
-body {
-    font-family: "roboto", cursive;
-    height: 100vh;
-    background-size: cover;        /* para que cubra toda la pantalla */
-    background-position: center;   /* centrado */
-    background-repeat: no-repeat;  /* evita que se repita */
-        background: linear-gradient(90deg, #e2e2e2, #abb9ec);
+/* Titulo de la galeria */
 
+/* TÍTULO PRINCIPAL */
+.titulo-galeria {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #4f46e5;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ANIMACIÓN LLAMATIVA */
+.animada {
+  animation: reboteColorido 1.2s ease-out forwards;
+}
+
+@keyframes reboteColorido {
+  0% {
+    transform: scale(0.8) translateY(-20px);
+    opacity: 0;
+    color: #3b82f6;
+  }
+  50% {
+    transform: scale(1.05) translateY(5px);
+    color: #8b5cf6;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    color: #4f46e5;
+  }
+}
+
+/* LÍNEA DECORATIVA DEBAJO */
+.decoracion-linea {
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(90deg, #6366f1, #a78bfa);
+  margin: 0 auto 30px;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+.animada-linea {
+  animation: expandirBrillo 1s 0.4s ease forwards;
+}
+
+@keyframes expandirBrillo {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 100px;
+    opacity: 1;
+  }
+}
+
+/* Cola animada de gato */
+.cola-gato {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 2.5rem;
+  transform-origin: top left;
+  animation: moverCola 1.5s ease-in-out infinite;
+  color: #4f46e5;
+}
+
+/* Animación de movimiento de la cola */
+@keyframes moverCola {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(12deg); }
+  50% { transform: rotate(-12deg); }
+  75% { transform: rotate(8deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.cola-gato img {
+  width: 100px;  /* o el tamaño que desees */
+  height: auto;
+  vertical-align: middle;
+  margin-left: 5px; /* opcional, para separar del texto */
 }
 
 
+
+
+
+
+
+
+/* ------------------------------------------------------- */
+
+.categoria-seccion h2 {
+  font-size: 1.8rem;
+  margin: 10px 60px;
+  color: #222;
+  border-bottom: 2px solid #9395e6; 
+  padding-bottom: 5px;
+}
+
+/* Galería dinámica */
 .gallery {
-    background-color: #1e272e;
-    margin: 60px; height: 400px;
-    display: flex;
-    justify-content: center; align-items: center;
-    border-radius: 8px;
-    box-shadow: 12px 45px 45px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: flex-start;
+  background-color: #1e272e;
+  border-radius: 8px;
+  margin: 30px 60px;
+  box-shadow: 12px 45px 45px rgba(0, 0, 0, 0.6);
 }
 
 .container {
-    overflow: hidden;
-    height: 360px;
-    margin: 10px;
+  flex: 0 1 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  height: auto;
 }
 
 .container img {
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: all 0.3s ease-out;
-    border: 1px solid #a5b1c2;
+  cursor: pointer;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: all 0.3s ease-out;
+  border: 1px solid #a5b1c2;
+  border-radius: 10px;
 }
 
 .container img:hover {
-    transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+.categoria,
+.usuario {
+  font-size: 14px;
+  margin: 5px 0;
+  text-align: center;
+  color: #ffffff; 
 }
 
 
+/* Modal */
 .modal {
     background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
@@ -131,7 +257,7 @@ body {
     transform: translate(-50%, -5%);
 }
 
-/* Boton de ver libr */
+/* Botón Ver */
 .ver-btn {
     margin-top: 8px;
     padding: 6px 12px;
@@ -146,7 +272,7 @@ body {
     background-color: #0056b3;
 }
 
-
+/* Footer */
 .footer {
     background-color: #1e272e;
     color: #f6f1f8;
@@ -158,14 +284,12 @@ body {
     margin-top: 40px;
 }
 
-
-/* ******************************************************************************* */
-/* Botón para abrir el menú */
+/* Botón Menú */
 .open-btn {
   position: fixed;
   top: 15px;
   left: 15px;
-  background-color: #5c6bc0;  /* un azul suave */
+  background-color: #5c6bc0;
   color: white;
   border: none;
   border-radius: 8px;
@@ -180,7 +304,7 @@ body {
 }
 
 .open-btn:hover {
-  background-color: #3949ab; /* azul más oscuro al pasar el mouse */
+  background-color: #3949ab;
   transform: scale(1.1);
 }
 
@@ -188,7 +312,6 @@ body {
   transform: scale(0.95);
   background-color: #303f9f;
 }
-
 
 /* Menú lateral */
 .sidebar {
@@ -201,15 +324,12 @@ body {
   padding-top: 60px;
   transition: 0.3s;
   z-index: 1000;
-  
 }
 
-/* --------------- Contenido del menu ------------------*/
 .sidebar.open {
   left: 0;
 }
 
-/* Elimina el estilo predeterminado de la lista */
 .sidebar ul {
   padding: 0;
   margin: 0;
@@ -219,17 +339,14 @@ body {
     font-size: 20px;
 }
 
-/* Elementos de la lista */
 .sidebar li {
   list-style: none;
   margin: 8px 0;
-  position: relative;
   background-color: transparent;
   border-radius: 2px;
   overflow: hidden;
 }
 
-/* Estilo de los enlaces */
 .sidebar a {
   display: block;
   padding: 10px 20px;
@@ -241,7 +358,6 @@ body {
   z-index: 1;
 }
 
-/* Barra de color a la izquierda del enlace */
 .sidebar a::before {
   content: '';
   position: absolute;
@@ -249,42 +365,26 @@ body {
   top: 0;
   bottom: 0;
   width: 5px;
-  background-color: #f0f;
   transition: 0.3s all ease-in-out;
 }
 
-/* Colores personalizados por orden */
-.sidebar li:nth-child(1) a::before {
-  background-color: #a5d8ff; /* Inicio */
-}
-.sidebar li:nth-child(2) a::before {
-  background-color: #e0bbff; /* Sobre Nosotros */
-}
-.sidebar li:nth-child(3) a::before {
-  background-color: #b2f2bb; /* Mis libros */
-}
-.sidebar li:nth-child(4) a::before {
-  background-color: #c8e7f5; /* Galería */
-}
-.sidebar li:nth-child(5) a::before {
-  background-color: #dcedc8; /* Contacto */
-}
-.sidebar li:nth-child(6) a::before {
-  background-color: #f0e7b7; /* Contacto */
-}
+.sidebar li:nth-child(1) a::before { background-color: #a5d8ff; }
+.sidebar li:nth-child(2) a::before { background-color: #e0bbff; }
+.sidebar li:nth-child(3) a::before { background-color: #b2f2bb; }
+.sidebar li:nth-child(4) a::before { background-color: #c8e7f5; }
+.sidebar li:nth-child(5) a::before { background-color: #dcedc8; }
+.sidebar li:nth-child(6) a::before { background-color: #f0e7b7; }
 
-/* Efecto al pasar el mouse */
 .sidebar a:hover::before {
-border-radius: 0 50px 50px 0;
+  border-radius: 0 50px 50px 0;
   width: 110%;
 }
 
-/* Botón de cerrar sesión */
 .logout-button {
   margin: 20px;
   padding: 12px 20px;
   width: calc(100% - 40px);
-  background-color: #d0312d; /* Rojo moderno */
+  background-color: #d0312d;
   color: white;
   border: none;
   border-radius: 12px;
@@ -308,9 +408,6 @@ border-radius: 0 50px 50px 0;
   transform: scale(0.98);
 }
 
-
-
-/* -------------- Estilo del perfil -------------- */
 .user-profile {
   text-align: center;
   padding: 10px;
@@ -322,7 +419,6 @@ border-radius: 0 50px 50px 0;
   height: 140px;
   border-radius: 50%;
   margin-bottom: 10px;
-
 }
 
 .user-profile p {
@@ -330,26 +426,7 @@ border-radius: 0 50px 50px 0;
   font-weight: bold;
 }
 
-.logout-button {
-  width: 90%;
-  margin: 15px auto;
-  padding: 10px;
-  background-color: #a94442;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
-  display: block;
-}
-
-.logout-button:hover {
-  background-color: #922d2d;
-}
-
-
-/*-------------Sección de lista de categorias */   
+/* Categorías de libros */
 .catalogo-categorias {
   padding: 40px 20px;
   background-color: #f9f7f7;
@@ -371,6 +448,7 @@ border-radius: 0 50px 50px 0;
 }
 
 .categoria-card {
+  text-decoration: none; 
   background-color: #ffffff;
   border-radius: 15px;
   padding: 20px;
@@ -382,9 +460,55 @@ border-radius: 0 50px 50px 0;
   max-width: 180px;
   color: #444;
   font-weight: bold;
+  text-align: center;
 }
+
 
 .categoria-card:hover {
   transform: scale(1.05);
   background-color: #ececec;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Boton Admin */
+
+.admin-boton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1100;
+}
+
+.admin-link {
+  background-color: #333;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.admin-link:hover {
+  background-color: #555;
+}
+
+.catalogo-categorias h2 {
+  color: #2c3e50; 
+}
+
+.catalogo-categorias h2 {
+  color: #1f3572;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+

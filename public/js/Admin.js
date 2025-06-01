@@ -1,48 +1,63 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Botón Cerrar sesión con confirmación
-  const cerrarSesionBtn = document.querySelector('header button');
-  if (cerrarSesionBtn) {
-    cerrarSesionBtn.addEventListener('click', () => {
-      const confirmar = confirm("¿Estás seguro de que deseas cerrar sesión?");
-      if (confirmar) {
-        alert("Sesión cerrada correctamente.");
-        // Redirigir si deseas:
-        // window.location.href = "/login";
-      } else {
-        alert("Cierre de sesión cancelado.");
-      }
-    });
-  }
+  // Cierre de sesión
+  window.logout = function () {
+    const confirmar = confirm("¿Deseas cerrar sesión?");
+    if (confirmar) {
+      alert("Sesión cerrada correctamente.");
+      // window.location.href = "login.html"; // si tienes login
+    }
+  };
 
-  // Botón Eliminar con confirmación
+  // Eliminar elementos
   document.querySelectorAll('.eliminar').forEach(btn => {
     btn.addEventListener('click', () => {
-      const confirmar = confirm("¿Estás seguro de que deseas eliminar este elemento?");
-      if (confirmar) {
-        const tarjeta = btn.closest('div').parentElement;
-        tarjeta.remove();
-      } else {
-        alert("Operación cancelada.");
+      if (confirm("¿Eliminar este elemento?")) {
+        btn.closest('div').parentElement.remove();
       }
     });
   });
 
-  // Botón Restringir
+  // Restringir
   document.querySelectorAll('.restringir').forEach(btn => {
     btn.addEventListener('click', () => {
-      alert("Este usuario ha sido restringido temporalmente.");
+      alert("Elemento restringido.");
+      const estado = btn.closest('.libro-card')?.querySelector('.estado-libro strong');
+      if (estado) estado.textContent = "Restringido";
     });
   });
 
-  // Botón Ver
+  // Habilitar
+  document.querySelectorAll('.habilitar').forEach(btn => {
+    btn.addEventListener('click', () => {
+      alert("Usuario habilitado.");
+    });
+  });
+
+  // Ver
   document.querySelectorAll('.ver').forEach(btn => {
     btn.addEventListener('click', () => {
       const padre = btn.closest('div').previousElementSibling;
-      if (padre) {
-        const nombre = padre.querySelector('.nombre-usuario')?.textContent ||
-                       padre.querySelector('.titulo-libro')?.textContent || 'Elemento';
-        alert(`Información del elemento: ${nombre.trim()}`);
-      }
+      const nombre = padre?.querySelector('.nombre-usuario')?.textContent ||
+                     padre?.querySelector('.titulo-libro')?.textContent || 'Elemento';
+      alert(`Información: ${nombre.trim()}`);
+    });
+  });
+
+  // Historial
+  document.querySelectorAll('.historial').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const usuario = btn.closest('div').previousElementSibling?.textContent || 'Usuario';
+      alert(`Mostrando historial de: ${usuario.trim()}`);
+    });
+  });
+
+  // Aprobar
+  document.querySelectorAll('.aprobar').forEach(btn => {
+    btn.addEventListener('click', () => {
+      alert("Libro aprobado.");
+      const estado = btn.closest('.libro-card')?.querySelector('.estado-libro strong');
+      if (estado) estado.textContent = "Aprobado";
     });
   });
 });
+

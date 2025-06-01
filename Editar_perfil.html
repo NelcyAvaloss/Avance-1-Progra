@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Editar Perfil</title>
+  <link rel="stylesheet" href="Editar_perfil.css" />
+</head>
+<body>
+
+<a href="Home.html" class="open-btn">Volver a Inicio</a>
+
+  <section class="perfil-container">
+    <h2>Editar Perfil</h2>
+
+    <!-- Foto de perfil -->
+    <div class="foto-preview">
+      <img id="preview-img" src="https://i.pinimg.com/736x/68/75/8e/68758ec65c8169b489ecf69b747f963f.jpg" alt="Foto actual">
+      <input type="file" id="foto" accept="image/*">
+    </div>
+
+    <!-- Formulario principal -->
+    <form id="form-perfil">
+      <label for="nombre">🧑‍💼 Nombre completo / Alias:</label>
+      <input type="text" id="nombre" required>
+
+      <label for="correo">📧 Correo electrónico:</label>
+      <input type="email" id="correo" required>
+
+      <label for="universidad">🎓 Universidad o institución:</label>
+      <input type="text" id="universidad">
+
+      <label for="rol">🧑‍💻 Rol:</label>
+      <select id="rol" required>
+        <option value="lector">Lector</option>
+        <option value="autor">Autor</option>
+      </select>
+
+      <label for="contraseña">🔒 Nueva contraseña:</label>
+      <div class="password-wrapper">
+        <input type="password" id="contraseña" placeholder="Escribe tu contraseña">
+        <button type="button" class="toggle-password" onclick="togglePassword('contraseña', this)">👁️</button>
+      </div>
+
+      <label for="confirmar">🔒 Confirmar contraseña:</label>
+      <div class="password-wrapper">
+        <input type="password" id="confirmar" placeholder="Repite tu contraseña">
+        <button type="button" class="toggle-password" onclick="togglePassword('confirmar', this)">👁️</button>
+      </div>
+
+      <hr>
+
+      <!-- Preferencias -->
+      <h3>Preferencias</h3>
+
+      <label for="tema">🎨 Tema:</label>
+      <select id="tema">
+        <option value="claro">Claro</option>
+        <option value="oscuro">Oscuro</option>
+      </select>
+
+      <label for="idioma">🌐 Idioma:</label>
+      <select id="idioma">
+        <option value="es">Español</option>
+        <option value="en">Inglés</option>
+      </select>
+
+      <label>📚 Categorías favoritas:</label>
+<div class="categorias-opciones" id="categorias-opciones">
+  <button type="button" data-cat="Fantasía">📖 Fantasía</button>
+  <button type="button" data-cat="Terror">👻 Terror</button>
+  <button type="button" data-cat="Aventura">🗺️ Aventura</button>
+  <button type="button" data-cat="Romance">💖 Romance</button>
+  <button type="button" data-cat="Ciencia ficción">🛸 Ciencia Ficción</button>
+  <button type="button" data-cat="Misterio">🕵️ Misterio</button>
+  <button type="button" data-cat="Historia">🏛️ Historia</button>
+  <button type="button" data-cat="Suspenso">😱 Suspenso</button>
+  <button type="button" data-cat="Otros">📚 Otros</button>
+</div>
+<input type="hidden" id="categorias" name="categorias" />
+<small style="color:#666;">Haz clic en las categorías para seleccionarlas</small>
+
+
+
+      <label for="notificaciones">
+        <input type="checkbox" id="notificaciones">
+        🔔 Activar notificaciones
+      </label>
+
+      <!-- Botones -->
+      <div class="acciones">
+        <button type="submit">💾 Guardar cambios</button>
+        <button type="button" id="cancelar">❌ Cancelar</button>
+        <button type="button" id="eliminar" class="danger">🧹 Eliminar cuenta</button>
+      </div>
+    </form>
+  </section>
+
+  <script src="Editar_perfil.js"></script>
+</body>
+</html>
+
+

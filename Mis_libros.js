@@ -1,28 +1,24 @@
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('form-libro');
   const listaLibros = document.getElementById('libros-subidos');
 
-  // Guardar si se está editando y el índice
   let editIndex = null;
 
-  // Función para crear un contenedor de libro
   function crearLibroDOM(libro, index) {
     const div = document.createElement('div');
     div.classList.add('container');
 
-    // Imagen de portada
     const img = document.createElement('img');
     img.src = libro.portada;
     img.alt = libro.titulo;
 
-    // Info (Título, descripción y categoría)
     const info = document.createElement('div');
     info.classList.add('info');
     info.innerHTML = `<strong>${libro.titulo}</strong>
                       <em>${libro.categoria}</em><br>
                       <p>${libro.descripcion}</p>`;
 
-    // Botones acciones
     const actions = document.createElement('div');
     actions.classList.add('actions');
 
@@ -46,10 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
     return div;
   }
 
-  // Lista donde guardamos libros (en memoria)
-  let libros = [];
+  // 🔄 Obtener libros desde localStorage
+  let libros = JSON.parse(localStorage.getItem('libros')) || [];
 
-  // Mostrar todos los libros en la galería
   function renderizarLibros() {
     listaLibros.innerHTML = '';
     libros.forEach((libro, i) => {
@@ -57,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Función para leer imagen y devolver URL para mostrar en <img>
   function leerArchivo(inputFile) {
     return new Promise((resolve, reject) => {
       if (inputFile.files && inputFile.files[0]) {
@@ -71,11 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Manejar envío del formulario (subir o editar libro)
   form.addEventListener('submit', async e => {
     e.preventDefault();
 
-    // Datos del formulario
     const titulo = form.titulo.value.trim();
     const descripcion = form.descripcion.value.trim();
     const categoria = form.categoria.value;
@@ -87,12 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Leer imagen de portada
     let portadaURL;
 
-    // Si estamos editando, solo cambiamos portada si se selecciona uno nuevo
     if (editIndex !== null && portadaInput.files.length === 0) {
-      portadaURL = libros[editIndex].portada; // mantiene la portada actual
+      portadaURL = libros[editIndex].portada;
     } else {
       portadaURL = await leerArchivo(portadaInput);
       if (!portadaURL) {
@@ -101,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Leer archivo libro (aquí solo leemos el nombre, para mostrarlo podrías agregar más funcionalidad)
     const archivoNombre = archivoInput.files[0]?.name || (editIndex !== null ? libros[editIndex].archivoNombre : '');
 
     if (!archivoNombre) {
@@ -114,29 +103,31 @@ document.addEventListener('DOMContentLoaded', () => {
       descripcion,
       categoria,
       portada: portadaURL,
-      archivoNombre
+      archivoNombre,
+      usuario: 'usuario_actual' // Cambia esto por el nombre del usuario si lo tienes disponible
     };
 
     if (editIndex === null) {
-      // Nuevo libro
       libros.push(nuevoLibro);
     } else {
-      // Editar libro existente
       libros[editIndex] = nuevoLibro;
       editIndex = null;
       form.querySelector('button[type="submit"]').textContent = 'Subir libro';
     }
 
+    // ✅ Guardar en localStorage
+    localStorage.setItem('libros', JSON.stringify(libros));
+
     form.reset();
     renderizarLibros();
   });
 
-  // Función eliminar libro
   function eliminarLibro(index) {
     if (confirm(`¿Eliminar el libro "${libros[index].titulo}"?`)) {
       libros.splice(index, 1);
+      localStorage.setItem('libros', JSON.stringify(libros)); // ✅ Actualizar localStorage
       renderizarLibros();
-      if(editIndex === index){
+      if (editIndex === index) {
         form.reset();
         editIndex = null;
         form.querySelector('button[type="submit"]').textContent = 'Subir libro';
@@ -144,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Función iniciar edición
   function iniciarEdicion(index) {
     const libro = libros[index];
     editIndex = index;
@@ -152,22 +142,13 @@ document.addEventListener('DOMContentLoaded', () => {
     form.titulo.value = libro.titulo;
     form.descripcion.value = libro.descripcion;
     form.categoria.value = libro.categoria;
-
-    // Para el input file no se puede asignar un valor, se deja vacío
     form.portada.value = '';
     form.archivo.value = '';
 
     form.querySelector('button[type="submit"]').textContent = 'Guardar cambios';
-
-    // Scroll al formulario para facilitar edición
     form.scrollIntoView({ behavior: 'smooth' });
   }
 
-  // Render inicial (si quieres mostrar los containers ya en HTML, puedes limpiar ese HTML para evitar duplicados)
+  // Mostrar al iniciar
   renderizarLibros();
 });
-
-
-
-
-

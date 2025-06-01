@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfil Actualizado</title>
+  <link rel="stylesheet" href="Perfil_actualizado.css" />
+</head>
+<body>
+  <div class="perfil-actualizado-container">
+    <h1>Perfil Actualizado</h1>
+    <div class="perfil-info">
+      <img id="perfil-foto" src="" alt="Foto de perfil" />
+      <ul>
+        <li><strong>Nombre:</strong> <span id="perfil-nombre"></span></li>
+        <li><strong>Correo:</strong> <span id="perfil-correo"></span></li>
+        <li><strong>Universidad:</strong> <span id="perfil-universidad"></span></li>
+        <li><strong>Rol:</strong> <span id="perfil-rol"></span></li>
+        <li><strong>Idioma:</strong> <span id="perfil-idioma"></span></li>
+        <li><strong>Tema:</strong> <span id="perfil-tema"></span></li>
+        <li><strong>Notificaciones:</strong> <span id="perfil-notificaciones"></span></li>
+        <li><strong>Categorías favoritas:</strong> <span id="perfil-categorias"></span></li>
+      </ul>
+    </div>
+    <a href="Home.html" class="volver">← Volver al inicio</a>
+  </div>
+
+  <script>
+    // Obtener datos del localStorage
+    const datos = JSON.parse(localStorage.getItem("perfil_usuario"));
+
+    if (datos) {
+      document.getElementById("perfil-foto").src = datos.foto || "";
+      document.getElementById("perfil-nombre").textContent = datos.nombre || "";
+      document.getElementById("perfil-correo").textContent = datos.correo || "";
+      document.getElementById("perfil-universidad").textContent = datos.universidad || "";
+      document.getElementById("perfil-rol").textContent = datos.rol || "";
+      document.getElementById("perfil-idioma").textContent = datos.idioma || "";
+      document.getElementById("perfil-tema").textContent = datos.tema || "";
+      document.getElementById("perfil-notificaciones").textContent = datos.notificaciones ? "Sí" : "No";
+      document.getElementById("perfil-categorias").textContent = (datos.categorias || []).join(", ");
+    } else {
+      document.querySelector(".perfil-info").innerHTML = "<p>No se encontró información de perfil.</p>";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soporte - Reporte al Administrador</title>
+  <link rel="stylesheet" href="Soporte.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <img src="Gato_soporte.jpg" alt="Gato soporte">
+    <main class="contenedor">
+      <h1>🛠️ Enviar reporte al administrador</h1>
+      <p>¿Encontraste un problema o tienes una sugerencia?</p>
+
+      <form id="form-reporte">
+        <label for="tipo">Tipo de reporte:</label>
+        <select id="tipo" required>
+          <option value="">Selecciona una opción</option>
+          <option value="error">Error en el sistema</option>
+          <option value="sugerencia">Sugerencia</option>
+          <option value="otro">Otro</option>
+        </select>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" rows="6" placeholder="Escribe tu reporte aquí..." required></textarea>
+
+        <label for="correo">Tu correo (opcional):</label>
+        <input type="email" id="correo" placeholder="tucorreo@example.com" />
+
+        <button type="submit">📩 Enviar Reporte</button>
+      </form>
+
+      <a href="Home.html" class="volver">← Volver al inicio</a>
+    </main>
+  </div>
+
+  <script src="Soporte.js"></script>
+</body>
