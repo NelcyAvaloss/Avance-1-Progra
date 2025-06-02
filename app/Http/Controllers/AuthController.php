@@ -56,4 +56,9 @@ class AuthController extends Controller
             'email' => 'Las credenciales no coinciden con nuestros registros.',
         ]);
     }
+
+    
+
+
+
 }

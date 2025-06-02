@@ -164,7 +164,7 @@ form button:hover {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  text-decoration: none; /* Para que los <a> no tengan subrayado */
+  text-decoration: none; 
 }
 
 .open-btn:hover {

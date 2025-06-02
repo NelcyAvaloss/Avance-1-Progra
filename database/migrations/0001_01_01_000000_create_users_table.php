@@ -17,8 +17,18 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('foto')->nullable(); // <--- Campo para guardar imagen de perfil
             $table->rememberToken();
             $table->timestamps();
+
+            // Campos adicionales
+            $table->string('rol')->default('usuario');
+            $table->string('estado')->default('habilitado');
+            $table->string('universidad')->nullable();
+            $table->string('idioma')->default('es');
+            $table->string('tema')->default('claro');
+            $table->text('categorias_favoritas')->nullable();
+            $table->boolean('notificaciones')->default(true);
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
