@@ -4,27 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sociedad Literaria Del Minino</title>
-<link rel="stylesheet" href="{{ asset('css/Home.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/Home.css') }}">
 </head>
 <body>
 
   <!-- Botón Administrador en esquina superior derecha -->
- @if(Auth::check() && Auth::user()->rol === 'admin')
-  <div class="admin-boton">
-      <a href="{{ route('admin') }}" class="admin-link">Administrador</a>
-  </div>
-@endif
+  @if(Auth::check() && Auth::user()->rol === 'admin')
+    <div class="admin-boton">
+      <a href="{{ route('admin') }}" class="admin-link"></a>
+    </div>
+  @endif
 
   <!-- Botón para abrir el menú -->
-  <button class="open-btn menu-btn" onclick="toggleSidebar()">☰ Menú</button>
+  <button class="open-btn menu-btn" onclick="toggleSidebar()"></button>
 
   <!-- Menú lateral -->
   <div id="sidebar" class="sidebar">
     <div class="user-profile">
       <div id="User-Foto">
-            <img src="{{ asset('storage/' . auth()->user()->foto) }}" alt="Foto de perfil">
+        <img src="{{ asset('storage/' . auth()->user()->foto) }}" alt="Foto de perfil">
       </div>
-        <a id="user-name" href="{{ route('perfil') }}">{{ Auth::user()->name }}</a>
+      <a id="user-name" href="{{ route('perfil') }}">{{ Auth::user()->name }}</a>
     </div>
 
     <ul>
@@ -37,65 +37,95 @@
 
     <form method="POST" action="{{ route('logout') }}">
       @csrf
-      <button type="submit" id="logout-btn" class="logout-button">🔒 Cerrar Sesión</button>
+      <button type="submit" id="logout-btn" class="logout-button">
+        <img src="{{ asset('imagenes/CerrarSesion.png') }}" alt="Cerrar Sesión" class="logout-img">
+      </button>
     </form>
   </div>
 
   <!-- Encabezado de la página -->
- <div class="Encabezado">
- <img src="{{ asset('imagenes/Gatitos.jpg') }}" id="Sociedad_literaria" alt="">
-
-</div>
-
+  <div class="Encabezado">
+    <div class="izquierda">
+      <img id="Gatitos1" src="{{ asset('imagenes/FondoEstrellas1.png') }}" alt="Gatitos izquierda">
+    </div>
+    <div class="centro">
+      <img id="Sociedad_literaria" src="{{ asset('imagenes/Gatitos.jpg') }}" alt="Logo Sociedad Literaria del Minino">
+    </div>
+    <div class="derecha">
+      <img id="Gatitos2" src="{{ asset('imagenes/FondoEstrellas2.png') }}" alt="Gatitos derecha">
+    </div>
+  </div>
 
   <!-- Sección de lista por categoría -->
   <section class="catalogo-categorias">
     <h2>Categorías de Libros</h2>
     <div class="categorias-grid">
-      <a href="#categoria-fantasia" class="categoria-card fantasia">📖 Fantasía</a>
-      <a href="#categoria-terror" class="categoria-card terror">👻 Terror</a>
-      <a href="#categoria-aventura" class="categoria-card aventura">🗺️ Aventura</a>
-      <a href="#categoria-romance" class="categoria-card romance">💖 Romance</a>
-      <a href="#categoria-ciencia-ficcion" class="categoria-card ciencia-ficcion">🛸 Ciencia Ficción</a>
-      <a href="#categoria-misterio" class="categoria-card misterio">🕵️ Misterio</a>
-      <a href="#categoria-historia" class="categoria-card historia">🏛️ Historia</a>
-      <a href="#categoria-suspenso" class="categoria-card suspenso">😱 Suspenso</a>
-      <a href="#categoria-otros" class="categoria-card otros">📚 Otros</a>
+      <a href="#categoria-fantasia" class="categoria-card fantasia">
+        <img src="{{ asset('imagenes/gatito fantasia (1).png') }}" alt="Fantasía"> Fantasía
+      </a>
+      <a href="#categoria-terror" class="categoria-card terror">
+        <img src="{{ asset('imagenes/gatito terror.png') }}" alt="Terror"> Terror
+      </a>
+      <a href="#categoria-aventura" class="categoria-card aventura">
+        <img src="{{ asset('imagenes/gatito aventurero.png') }}" alt="Aventura"> Aventura
+      </a>
+      <a href="#categoria-romance" class="categoria-card romance">
+        <img src="{{ asset('imagenes/gatito romantico.png') }}" alt="Romance"> Romance
+      </a>
+      <a href="#categoria-ciencia-ficcion" class="categoria-card ciencia-ficcion">
+        <img src="{{ asset('imagenes/gatito ciencia ficcion.png') }}" alt="Ciencia Ficción"> Ciencia Ficción
+      </a>
+      <a href="#categoria-misterio" class="categoria-card misterio">
+        <img src="{{ asset('imagenes/Nego detective.png') }}" alt="Misterio"> Misterio
+      </a>
+      <a href="#categoria-historia" class="categoria-card historia">
+        <img src="{{ asset('imagenes/gatito historia.png') }}" alt="Historia"> Historia
+      </a>
+      <a href="#categoria-suspenso" class="categoria-card suspenso">
+        <img src="{{ asset('imagenes/gatito suspen.png') }}" alt="Suspenso"> Suspenso
+      </a>
+      <a href="#categoria-otros" class="categoria-card otros">
+        <img src="{{ asset('imagenes/otros.png') }}" alt="Otros"> Otros
+      </a>
     </div>
   </section>
 
   <!-- 🔍 Barra de búsqueda -->
   <div class="busqueda-container">
-    <input type="text" id="buscador" placeholder="🔍 Buscar por título, categoría o usuario">
+    <input type="text" id="buscador" placeholder="Buscar por título, categoría o usuario">
   </div>
 
   <!-- Galería por categorías -->
   <h1 class="titulo-galeria animada">
-    📚 Biblioteca <span class="cola-gato"><img src="{{ asset('imagenes/Cola_de_gato.png') }}" alt=""></span>
+    <span class="bloque-biblioteca">
+      <img src="{{ asset('imagenes/Orejas2.png') }}" alt="Orejas de gato" class="orejas">
+      Biblioteca
+    </span>
+    <span class="cola-gato"><img src="{{ asset('imagenes/Cola_de_gato.png') }}" alt=""></span>
   </h1>
   <div class="decoracion-linea animada-linea"></div>
 
-<div id="galeria-categorias" class="galeria-categorias">
-  @foreach ($libros as $categoria => $librosCategoria)
-    <div class="categoria-seccion">
-      <h3 id="categoria-{{ strtolower($categoria) }}">📚 {{ ucfirst($categoria) }}</h3>
+  <div id="galeria-categorias" class="galeria-categorias">
+    @foreach ($libros as $categoria => $librosCategoria)
+      <div class="categoria-seccion">
+        <h3 id="categoria-{{ strtolower($categoria) }}">📚 {{ ucfirst($categoria) }}</h3>
+        <div class="gallery">
+          @foreach ($librosCategoria as $libro)
+            <div class="container">
+              <img src="{{ asset('storage/' . $libro->imagen) }}" alt="{{ $libro->titulo }}">
+              <p class="categoria">Categoría: {{ $libro->categoria }}</p>
+              <p class="usuario">Subido por: {{ $libro->usuario->name ?? 'usuario' }}</p>
+              <a href="{{ asset('storage/' . $libro->archivo) }}" target="_blank" class="ver-btn">Ver</a>
 
-      <div class="gallery">
-        @foreach ($librosCategoria as $libro)
-          <div class="container">
-            <img src="{{ asset('storage/' . $libro->imagen) }}" alt="{{ $libro->titulo }}">
-            <p class="categoria">Categoría: {{ $libro->categoria }}</p>
-            <p class="usuario">Subido por: {{ $libro->usuario->name ?? 'usuario' }}</p>
-            <button class="ver-btn">Ver</button>
-          </div>
-        @endforeach
+
+            </div>
+          @endforeach
+        </div>
       </div>
-    </div>
-  @endforeach
-</div>
+    @endforeach
+  </div>
 
-
-
+  <!-- Modal de imagen -->
   <div class="modal">
     <img src="" alt="full-img" class="full-img" />
     <p class="caption"></p>

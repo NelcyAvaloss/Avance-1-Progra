@@ -18,18 +18,14 @@ class PerfilController extends Controller
         'universidad' => 'nullable|string|max:255',
         'rol' => 'required|in:lector,autor',
         'password' => 'nullable|confirmed|min:6',
-        'tema' => 'required|in:claro,oscuro',
-        'idioma' => 'required|string',
         'categorias_favoritas' => 'nullable|string',
-        'foto' => 'nullable|image|max:2048',
+        'foto' => 'nullable|image',
     ]);
 
     $user->name = $request->name;
     $user->email = $request->email;
     $user->universidad = $request->universidad;
     $user->rol = $request->rol;
-    $user->tema = $request->tema;
-    $user->idioma = $request->idioma;
     $user->categorias_favoritas = $request->categorias_favoritas;
 
     if ($request->filled('password')) {

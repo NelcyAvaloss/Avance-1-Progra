@@ -9,7 +9,7 @@ class SoporteController extends Controller
 {
     public function mostrarFormulario()
     {
-        return view('soporte');
+        return view('Soporte');
     }
 
     public function enviar(Request $request)

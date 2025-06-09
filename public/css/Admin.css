@@ -1,156 +1,269 @@
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f5f6fa;
-      margin: 0;
-      padding: 0;
-    }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f6fa;
+  margin: 0;
+  padding: 0;
+}
 
 header {
-  background-color: #1e2a38; /* Azul oscuro profundo */
-  color: #f1f6fb; /* Azul muy claro para contraste */
+  background-color: #1e2a38;
+  color: #f1f6fb;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: 'Segoe UI', sans-serif;
-  background-image: url('https://cdn-icons-png.flaticon.com/512/2206/2206368.png'); /* Ícono de gatito azul oscuro */
+  background-image: url('https://cdn-icons-png.flaticon.com/512/2206/2206368.png');
   background-repeat: no-repeat;
   background-position: left 1.5rem center;
   background-size: 40px;
-  padding-left: 4rem; /* deja espacio al ícono */
-  border-bottom: 3px solid #395c82; /* azul intermedio */
+  padding-left: 4rem;
+  border-bottom: 3px solid #395c82;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+nav {
+  background-color: #dff9fb;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #19400f;
+  font-weight: bold;
+}
+
+main {
+  padding: 1rem 2rem;
+}
+
+section {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.nombre-usuario {
+  font-weight: bold;
+  color: #2d3436;
+}
+
+input[type="text"] {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid #ced6e0;
+  background-color: #ffffff;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  outline: none;
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"]::placeholder {
+  color: #a4b0be;
+  font-style: italic;
+}
+
+input[type="text"]:focus {
+  border: 1px solid #4a69bd;
+  box-shadow: 0 0 0 3px rgba(74, 105, 189, 0.2);
+}
+
+#lista-usuarios div,
+.libro-card {
+  background-color: #f8f9fa;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.5rem;
+  border-left: 5px solid #0984e3;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.estado-usuario {
+  display: inline-block;
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.estado-usuario strong {
+  color: #2c3e50;
+}
 
 
+/*  **************************** */
 
-    nav {
-      background-color: #dff9fb;
-      padding: 1rem 2rem;
-      margin-bottom: 1rem;
-    }
+.libro-info {
+  display: flex;
+  flex-direction: column;
+}
 
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 2rem;
-      
-    }
+.titulo-libro {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #2d3436;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #19400f;
-      font-weight: bold;
-    }
+.subido-por {
+  color: #636e72;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
 
-    main {
-      padding: 1rem 2rem;
-    }
+.estado-libro {
+  font-size: 0.9rem;
+  margin-top: 2px;
+  color: #333;
+}
 
-    section {
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-    }
+.libro-acciones {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+/* ----------------------------------------------- */
+.open-btn {
+  display: inline-block;
+  padding: 5px 20px;
+  background-color: #6c5ce7;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-    h2 {
-      display: flex;
-      align-items: center;
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-    }
+.open-btn:hover {
+  background-color: #5e50e3;
+  transform: translateY(-2px);
+}
 
-    .nombre-usuario {
-    font-weight: bold;
-    color: #2d3436;
-    }
+.open-btn:active {
+  transform: scale(0.98);
+}
 
+.botones-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 
-    
-    input[type="text"] {
-      display: block;
-      width: 100%;
-      box-sizing: border-box;
-      padding: 0.6rem 0.9rem;
-      border-radius: 10px;
-      border: 1px solid #ced6e0;
-      background-color: #ffffff;
-      font-size: 0.95rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
-      outline: none;
-      margin-bottom: 1.5rem;
-    }
+/**********/
+button {
+  border: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: background-color 0.3s;
+}
 
-    input[type="text"]::placeholder {
-      color: #a4b0be;
-      font-style: italic;
-    }
+/* ----------------------------------------------- */
 
-    input[type="text"]:focus {
-      border: 1px solid #4a69bd;
-      box-shadow: 0 0 0 3px rgba(74, 105, 189, 0.2);
-    }
+button.eliminar {
+  background-color: #ff7675;
+  color: rgb(41, 40, 40);
+}
 
-    #lista-usuarios div,
-    .libro-card {
-      background-color: #f8f9fa;
-      padding: 0.7rem 1rem;
-      margin-bottom: 0.5rem;
-      border-left: 5px solid #0984e3;
-      border-radius: 6px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+button.restringir {
+  background-color: #fdcb6e;
+  color: rgb(53, 51, 51);
+}
 
-    .libro-info {
-      display: flex;
-      flex-direction: column;
-    }
+button.habilitar {
+  background-color: #71df7a;
+  color: #2d3436;
+}
 
-    .titulo-libro {
-      font-weight: bold;
-      font-size: 1.1rem;
-      color: #2d3436;
-    }
+button.ver {
+  background-color: #74b9ff;
+  color: rgb(59, 57, 57);
+}
 
-    .subido-por {
-      color: #636e72;
-      font-size: 0.9rem;
-      margin-top: 4px;
-    }
+button.historial {
+  background-color: #a29bfe;
+  color: rgb(53, 51, 51);
+}
 
-    .libro-acciones {
-      display: flex;
-      gap: 0.5rem;
-    }
+button.aprobar {
+  background-color: #81c784;
+  color: rgb(59, 57, 57);
+}
 
-    button {
-      border: none;
-      padding: 0.4rem 0.7rem;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-      margin-left: 0.5rem;
-    }
+button.aprobar:hover {
+  background-color: #66bb6a;
+}
 
-    button.eliminar {
-      background-color: #ff7675;
-      color: white;
-    }
+/* -------------------------------------------------- */ 
+#filtro-estado {
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #f0f4f8;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2c3e50;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
 
-    button.restringir {
-      background-color: #fdcb6e;
-      color: black;
-    }
+#filtro-estado:hover {
+  background-color: #e8eff5;
+  border-color: #3498db;
+}
 
-    button.ver {
-      background-color: #74b9ff;
-      color: white;
-    }
+#filtro-estado:focus {
+  outline: none;
+  border-color: #2980b9;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* -------------------------------------------------- */ 
+/* Reportes / Soporte tecnico */
+.reporte-card {
+  background-color: #f9f9f9;
+  border-left: 4px solid #4f46e5;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.reporte-card h3 {
+  margin: 0 0 8px;
+  color: #333;
+}
+
+.reporte-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}

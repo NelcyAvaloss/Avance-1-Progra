@@ -8,17 +8,19 @@ use App\Models\Reporte;
 class AdminController extends Controller
 {
     // Muestra el panel solo si es admin
-    public function index()
+   public function index()
 {
-   $usuarios = User::where('rol', '!=', 'admin')->get();
-    $libros = Libro::with('usuario')->get(); // Asegúrate que Libro tenga relación con User
-    $reportes = Reporte::all(); // Solo si tienes un modelo llamado Reporte
-
-    return view('Admin', compact('usuarios', 'libros', 'reportes'));
+    if (auth()->user()->rol !== 'admin') {
+        abort(403, 'No tienes permiso para acceder a esta sección.');
+    }
 
     $usuarios = User::where('rol', '!=', 'admin')->get();
-    return view('Admin', compact('usuarios'));
+    $libros = Libro::with('usuario')->get();
+    $reportes = Reporte::all();
+
+    return view('Admin', compact('usuarios', 'libros', 'reportes'));
 }
+
 
 
     // Eliminar usuario si no es admin

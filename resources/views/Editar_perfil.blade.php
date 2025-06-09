@@ -70,19 +70,7 @@
         </div>
 
         <hr>
-        <h4>Preferencias</h4>
-
-        <label for="tema">🎨 Tema:</label>
-        <select name="tema" id="tema">
-            <option value="claro" {{ old('tema', auth()->user()->tema) == 'claro' ? 'selected' : '' }}>Claro</option>
-            <option value="oscuro" {{ old('tema', auth()->user()->tema) == 'oscuro' ? 'selected' : '' }}>Oscuro</option>
-        </select>
-
-        <label for="idioma">🌐 Idioma:</label>
-        <select name="idioma" id="idioma">
-            <option value="es" {{ old('idioma', auth()->user()->idioma) == 'es' ? 'selected' : '' }}>Español</option>
-            <option value="en" {{ old('idioma', auth()->user()->idioma) == 'en' ? 'selected' : '' }}>Inglés</option>
-        </select>
+       
 
         <label>📚 Categorías favoritas:</label>
         <div class="categorias-opciones" id="categorias-opciones">

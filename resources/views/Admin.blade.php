@@ -8,7 +8,7 @@
 <body>
 
   <header>
-    <h1>Panel de Administración</h1>
+    <h1>Panel de Bibliotecario</h1>
     <div class="botones-header">
       <a href="{{ route('home') }}" class="open-btn">Ir a Home</a>
       <form action="{{ route('logout') }}" method="POST">

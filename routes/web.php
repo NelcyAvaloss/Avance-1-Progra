@@ -65,9 +65,9 @@ Route::middleware(['auth'])->group(function () {
         return view('Historial');
     })->name('historial');
 
-    Route::get('/soporte', function () {
-        return view('Soporte');
-    })->name('soporte');
+    Route::get('/soporte', [SoporteController::class, 'mostrarFormulario'])->name('soporte.form');
+    Route::post('/soporte', [SoporteController::class, 'enviar'])->name('soporte.enviar');
+
 
     // Logout
     Route::post('/logout', function () {
