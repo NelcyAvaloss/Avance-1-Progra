@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(90deg, #d3cdcd, #3d3e42);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+
+.contenedor {
+  flex: 1 1 450px;
+  background-color: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 17px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+textarea,
+input[type="email"],
+select {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+button[type="submit"] {
+  background-color: #50836f;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #497264;
+}
+
+.volver {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #497264;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* 📱 Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img,
+  .contenedor {
+    max-width: 100%;
+    width: 100%;
+  }
+}
