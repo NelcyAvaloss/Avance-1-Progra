@@ -289,3 +289,16 @@ form{ width: 100%; }
 
     .toggle-panel h1{font-size: 30px; }
 }
+
+
+.contenedor-titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vh; /* ocupa el alto total de la pantalla */
+}
+
+.tituloPrincipal {
+  font-size: 30px;
+  text-align: center;
+}

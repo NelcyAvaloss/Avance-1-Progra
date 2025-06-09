@@ -10,12 +10,12 @@
 
   <!-- Botón Administrador en esquina superior derecha -->
   <div class="admin-boton">
-    <a href="Admin.html" class="admin-link">Administrador</a>
+    <a href="Admin.html" class="admin-link"></a>
   </div>
 
 
   <!-- Botón para abrir el menú -->
-<button class="open-btn menu-btn" onclick="toggleSidebar()">☰ Menú</button>
+<button class="open-btn menu-btn" onclick="toggleSidebar()"></button>
 
   <!-- Menú lateral -->
   <div id="sidebar" class="sidebar">
@@ -23,7 +23,7 @@
       <div id="User-Foto">
         <img id="foto-perfil-menu" src="https://i.pinimg.com/736x/68/75/8e/68758ec65c8169b489ecf69b747f963f.jpg" alt="Foto de perfil">
       </div>
-      <a id="user-name" href="Perfil_actualizado.html">Cat Kayn</a>
+      <a id="user-name" href="Perfil_actualizado.html">Cat</a>
     </div>
 
     <ul>
@@ -34,40 +34,81 @@
       <li><a href="Soporte.html">⚙️ Soporte</a></li>
     </ul>
 
-    <button id="logout-btn" class="logout-button">🔒 Cerrar Sesión</button>
+    <button id="logout-btn" class="logout-button">
+      <img src="CerrarSesion.png" alt="Cerrar Sesión" class="logout-img">
+    </button>
+
   </div>
 
   <!-- Encabezado de la página -->
   <div class="Encabezado">
-    <img src="Gatitos.jpg" id="Sociedad_literaria" alt="">
+  <div class="izquierda">
+    <img id="Gatitos1" src="FondoEstrellas1.png" alt="Gatitos izquierda">
   </div>
+  <div class="centro">
+    <img id="Sociedad_literaria" src="Gatitos.jpg" alt="Logo Sociedad Literaria del Minino">
+  </div>
+  <div class="derecha">
+    <img id="Gatitos2" src="FondoEstrellas2.png" alt="Gatitos derecha">
+  </div>
+</div>
+
 
   <!-- Sección de lista por categoría -->
   <section class="catalogo-categorias">
     <h2>Categorías de Libros</h2>
-    <div class="categorias-grid">
-      <a href="#categoria-fantasia" class="categoria-card fantasia">📖 Fantasía</a>
-      <a href="#categoria-terror" class="categoria-card terror">👻 Terror</a>
-      <a href="#categoria-aventura" class="categoria-card aventura">🗺️ Aventura</a>
-      <a href="#categoria-romance" class="categoria-card romance">💖 Romance</a>
-      <a href="#categoria-ciencia-ficcion" class="categoria-card ciencia-ficcion">🛸 Ciencia Ficción</a>
-      <a href="#categoria-misterio" class="categoria-card misterio">🕵️ Misterio</a>
-      <a href="#categoria-historia" class="categoria-card historia">🏛️ Historia</a>
-      <a href="#categoria-suspenso" class="categoria-card suspenso">😱 Suspenso</a>
-      <a href="#categoria-otros" class="categoria-card otros">📚 Otros</a>
-    </div>
+
+<div class="categorias-grid">
+  <a href="#categoria-fantasia" class="categoria-card fantasia">
+    <img src="gatito fantasia (1).png" alt="Fantasía"> Fantasía
+  </a>
+  <a href="#categoria-terror" class="categoria-card terror">
+    <img src="gatito terror.png" alt="Terror"> Terror
+  </a>
+  <a href="#categoria-aventura" class="categoria-card aventura">
+    <img src="gatito aventurero.png" alt="Aventura"> Aventura
+  </a>
+  <a href="#categoria-romance" class="categoria-card romance">
+    <img src="gatito romantico.png" alt="Romance"> Romance
+  </a>
+  <a href="#categoria-ciencia-ficcion" class="categoria-card ciencia-ficcion">
+    <img src="gatito ciencia ficcion.png" alt="Ciencia Ficción"> Ciencia Ficción
+  </a>
+  <a href="#categoria-misterio" class="categoria-card misterio">
+    <img src="Nego detective.png" alt="Misterio"> Misterio
+  </a>
+  <a href="#categoria-historia" class="categoria-card historia">
+    <img src="gatito historia.png" alt="Historia"> Historia
+  </a>
+  <a href="#categoria-suspenso" class="categoria-card suspenso">
+    <img src="gatito suspen.png" alt="Suspenso"> Suspenso
+  </a>
+  <a href="#categoria-otros" class="categoria-card otros">
+    <img src="otros.png" alt="Otros"> Otros
+  </a>
+</div>
+
+
   </section>
+
 
   <!-- 🔍 Barra de búsqueda -->
   <div class="busqueda-container">
-    <input type="text" id="buscador" placeholder="🔍 Buscar por título, categoría o usuario">
+    <input type="text" id="buscador" placeholder="Buscar por título, categoría o usuario">
   </div>
 
+
   <!-- Galería por categorías -->
-  <h1 class="titulo-galeria animada">
-    📚 Biblioteca <span class="cola-gato"><img src="Cola_de_gato.png" alt=""></span>
-  </h1>
-  <div class="decoracion-linea animada-linea"></div>
+<h1 class="titulo-galeria animada">
+  <span class="bloque-biblioteca">
+    <img src="Orejas2.png" alt="Orejas de gato" class="orejas">
+    Biblioteca
+  </span>
+  <span class="cola-gato"><img src="Cola_de_gato.png" alt=""></span>
+</h1>
+<div class="decoracion-linea animada-linea"></div>
+
+
 
   <div id="galeria-categorias" class="galeria-categorias"></div>
 
