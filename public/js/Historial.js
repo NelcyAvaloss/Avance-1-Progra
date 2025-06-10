@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     acciones.classList.add("historial-acciones");
 
     const verBtn = document.createElement("button");
-    verBtn.textContent = "👁️ Ver de nuevo";
+   /* verBtn.textContent = "👁️ Ver de nuevo";*/
     verBtn.classList.add("ver-btn");
     verBtn.addEventListener("click", () => {
       mostrarModal(libro);
@@ -66,12 +66,14 @@ document.addEventListener("DOMContentLoaded", () => {
 function mostrarModal(libro) {
   const modal = document.createElement("div");
   modal.classList.add("modal");
+
   modal.innerHTML = `
     <div class="modal-content">
-      <img src="${libro.portada}" alt="${libro.titulo}" />
+      <img src="${libro.portada}" alt="${libro.titulo}">
       <p>${libro.titulo}</p>
       <button onclick="document.body.removeChild(this.parentNode.parentNode)">Cerrar</button>
     </div>
   `;
+
   document.body.appendChild(modal);
 }

@@ -7,7 +7,7 @@ use App\Models\Libro;
 use App\Models\Reporte;
 class AdminController extends Controller
 {
-    // Muestra el panel solo si es admin
+    // Muestra el panel solo al admin
    public function index()
 {
     if (auth()->user()->rol !== 'admin') {
@@ -23,7 +23,6 @@ class AdminController extends Controller
 
 
 
-    // Eliminar usuario si no es admin
     public function eliminarUsuario($id)
     {
         $usuario = User::findOrFail($id);
@@ -35,7 +34,6 @@ class AdminController extends Controller
         return redirect()->route('admin')->with('success', 'Usuario eliminado');
     }
 
-    // Restringir usuario si no es admin
     public function restringirUsuario($id)
     {
         $usuario = User::findOrFail($id);
@@ -48,7 +46,6 @@ class AdminController extends Controller
         return redirect()->route('admin')->with('success', 'Usuario restringido');
     }
 
-    // Habilitar usuario si no es admin
     public function habilitarUsuario($id)
     {
         $usuario = User::findOrFail($id);
@@ -61,7 +58,6 @@ class AdminController extends Controller
         return redirect()->route('admin')->with('success', 'Usuario habilitado');
     }
 
-    // Mostrar vista individual del usuario
     public function verUsuario($id)
     {
         $usuario = User::findOrFail($id);

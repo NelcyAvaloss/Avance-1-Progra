@@ -1,4 +1,4 @@
-{{-- resources/views/perfil_actualizado.blade.php --}}
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,8 +21,7 @@
                 <li><strong>Correo:</strong> {{ Auth::user()->email }}</li>
                 <li><strong>Universidad:</strong> {{ Auth::user()->universidad }}</li>
                 <li><strong>Rol:</strong> {{ Auth::user()->rol }}</li>
-                <li><strong>Tema:</strong> {{ Auth::user()->tema }}</li>
-                <li><strong>Idioma:</strong> {{ Auth::user()->idioma }}</li>
+           
                 <li><strong>Categorías favoritas:</strong> {{ implode(', ', json_decode(Auth::user()->categorias_favoritas, true)) }}</li>
             </ul>
         </div>

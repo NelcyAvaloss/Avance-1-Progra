@@ -6,6 +6,24 @@
   <title>Sociedad Literaria Del Minino</title>
   <link rel="stylesheet" href="{{ asset('css/Home.css') }}">
 </head>
+
+
+<script>
+  function guardarHistorial(titulo, portada) {
+    const historial = JSON.parse(localStorage.getItem("historial_lectura")) || [];
+
+    historial.push({
+      titulo: titulo,
+      portada: portada,
+      fecha: new Date().toLocaleString()
+    });
+
+    localStorage.setItem("historial_lectura", JSON.stringify(historial));
+  }
+</script>
+
+
+
 <body>
 
   <!-- Botón Administrador en esquina superior derecha -->
@@ -90,7 +108,7 @@
     </div>
   </section>
 
-  <!-- 🔍 Barra de búsqueda -->
+  <!--  Barra de búsqueda -->
   <div class="busqueda-container">
     <input type="text" id="buscador" placeholder="Buscar por título, categoría o usuario">
   </div>
@@ -115,7 +133,11 @@
               <img src="{{ asset('storage/' . $libro->imagen) }}" alt="{{ $libro->titulo }}">
               <p class="categoria">Categoría: {{ $libro->categoria }}</p>
               <p class="usuario">Subido por: {{ $libro->usuario->name ?? 'usuario' }}</p>
-              <a href="{{ asset('storage/' . $libro->archivo) }}" target="_blank" class="ver-btn">Ver</a>
+              <a href="{{ asset('storage/' . $libro->archivo) }}"
+   target="_blank"
+   onclick="guardarHistorial('{{ $libro->titulo }}', '{{ asset('storage/' . $libro->imagen) }}')"
+   class="ver-btn">Ver</a>
+
 
 
             </div>
